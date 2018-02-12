@@ -1,0 +1,170 @@
+Rania@DESKTOP-74SA5EP MINGW64 ~ (master)
+$ mkdir Sprint0
+
+Rania@DESKTOP-74SA5EP MINGW64 ~ (master)
+$ cd Sprint0
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git init
+Initialized empty Git repository in C:/Users/Rania/Sprint0/.git/
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        1.1.txt
+        3.1.txt
+        5.1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git add .
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   1.1.txt
+        new file:   3.1.txt
+        new file:   5.1.txt
+
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git commit -m "3 files were added in repo"
+[master (root-commit) e0e912c] 3 files were added in repo
+ 3 files changed, 11 insertions(+)
+ create mode 100644 1.1.txt
+ create mode 100644 3.1.txt
+ create mode 100644 5.1.txt
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git rm 3.1.txt
+rm '3.1.txt'
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        deleted:    3.1.txt
+
+
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git commit -m "i deleted the 3.1 file in the repo"
+[master 799afa5] i deleted the 3.1 file in the repo
+ 1 file changed, 5 deletions(-)
+ delete mode 100644 3.1.txt
+
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git log
+commit 799afa55ca8cba0f9a8573de12c65b785150fdfb (HEAD -> master)
+Author: raniaahmed97 <30401985+raniaahmed97@users.noreply.github.com>
+Date:   Mon Feb 12 19:28:55 2018 +0200
+
+    i deleted the 3.1 file in the repo
+
+commit e0e912c0369ca7680de73a0c22341caa555a2c8d
+Author: raniaahmed97 <30401985+raniaahmed97@users.noreply.github.com>
+Date:   Mon Feb 12 19:19:48 2018 +0200
+
+    3 files were added in repo
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git revert 799afa55ca8cba0f9a8573de12c65b785150fdfb
+
+Revert "i deleted the 3.1 file in the repo"
+
+This reverts commit 799afa55ca8cba0f9a8573de12c65b785150fdfb.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Changes to be committed:
+#       new file:   3.1.txt
+#
+
+Rania@DESKTOP-74SA5EP MINGW64 ~ (master)
+$ cd Sprint0
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git init
+Reinitialized existing Git repository in C:/Users/Rania/Sprint0/.git/
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   3.1.txt
+
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git commit -m "reverted back the 3.1 file in the repo"
+[master 0a4ff1b] reverted back the 3.1 file in the repo
+ 1 file changed, 5 insertions(+)
+ create mode 100644 3.1.txt
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ touch README.md
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git branch ReadMe
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git checkout ReadMe
+Switched to branch 'ReadMe'
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (ReadMe)
+$ git add README.md
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (ReadMe)
+$ git status
+On branch ReadMe
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   README.md
+
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (ReadMe)
+$ git commit -m "I added README.md to read me new branch"
+[ReadMe 0267f0a] I added README.md to read me new branch
+ 1 file changed, 4 insertions(+)
+ create mode 100644 README.md
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (ReadMe)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git merge ReadMe
+Updating 0a4ff1b..0267f0a
+Fast-forward
+ README.md | 4 ++++
+ 1 file changed, 4 insertions(+)
+ create mode 100644 README.md
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git commit -m "merged these two branches master and readme together"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
