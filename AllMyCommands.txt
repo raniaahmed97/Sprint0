@@ -168,3 +168,23 @@ Your branch is ahead of 'origin/master' by 1 commit.
 
 nothing to commit, working tree clean
 
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git add AllMyCommands.txt
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   AllMyCommands.txt
+
+
+Rania@DESKTOP-74SA5EP MINGW64 ~/Sprint0 (master)
+$ git commit -m "all my commands which is the steps is now added in the repo"
+[master 08dbdbe] all my commands which is the steps is now added in the repo
+ 1 file changed, 170 insertions(+)
+ create mode 100644 AllMyCommands.txt
